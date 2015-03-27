@@ -31,12 +31,8 @@ var checkInjection = function () {
 
 chrome.notifications.onClicked.addListener(function (notification) {
 
-  getCurrentTab(function (tab) {
-
-    chrome.tabs.executeScript({
-      code: 'location.reload()'
-    });
-
+  chrome.tabs.executeScript({
+    code: 'location.reload()'
   });
 
 });
