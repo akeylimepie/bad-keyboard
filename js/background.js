@@ -29,6 +29,17 @@ var checkInjection = function () {
   });
 };
 
+chrome.notifications.onClicked.addListener(function (notification) {
+
+  getCurrentTab(function (tab) {
+
+    chrome.tabs.executeScript({
+      code: 'location.reload()'
+    });
+
+  });
+
+});
 
 chrome.commands.onCommand.addListener(function (command) {
   getCurrentTab(function (tab) {
